@@ -1,4 +1,4 @@
 <Solution>
   <Project Path="Client/Client.csproj" />
-  <Project Path="Lan Messaging System/Server.csproj" />
+  <Project Path="Lan Messaging System/Server.csproj" Id="cfb09248-4b5d-4e7b-a3fa-11e40f6c4f90" />
 </Solution>

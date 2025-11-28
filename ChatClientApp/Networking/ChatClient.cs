@@ -2,23 +2,25 @@
 using System.IO;
 using System.Net.Sockets;
 using System.Threading;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Client.Networking
 {
     public class ChatClient
     {
-        private TcpClient tcpClient;
-        private NetworkStream networkStream;
-        private StreamReader reader;
-        private StreamWriter writer;
-        private Thread listenThread;
+        private TcpClient? tcpClient;
+        private NetworkStream? networkStream;
+        private StreamReader? reader;
+        private StreamWriter? writer;
+        private Thread? listenThread;
         private bool isConnected;
-        private string currentUserName;
+        private string? currentUserName;
 
         // Events for UI layer
-        public event Action<string, string, string> MessageReceived;
-        public event Action<string> ErrorOccurred;
-        public event Action Disconnected;
+        public event Action<string, string, string>? MessageReceived;
+        public event Action<string>? ErrorOccurred;
+        public event Action? Disconnected;
 
         // Connect to server
         public bool Connect(string serverIp, int serverPort, string userName)
